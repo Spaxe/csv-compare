@@ -28,6 +28,17 @@ csvB.addEventListener('change', () => {
 
 // Compare and contrast
 const button = document.getElementById('submit');
+const onlyA = document.getElementById('onlyA');
+const onlyB = document.getElementById('onlyB');
+const hotA = new Handsontable(onlyA, {
+  rowHeaders: true,
+  colHeaders: true
+});
+const hotB = new Handsontable(onlyB, {
+  rowHeaders: true,
+  colHeaders: true
+});
+
 button.addEventListener('click', () => {
   const keyA = document.getElementById('keyA').value;
   const keyB = document.getElementById('keyB').value;
@@ -46,31 +57,13 @@ button.addEventListener('click', () => {
   const onlyValueA = _.filter(tableA, row => inANotInB.includes(row[keyA]));
   const onlyValueB = _.filter(tableB, row => inBNotInA.includes(row[keyB]));
 
+  const resultValueA = onlyValueA.map(o => Object.values(o));
+  const resultValueB = onlyValueB.map(o => Object.values(o));
+
   console.table(onlyValueA);
   console.table(onlyValueB);
 
-  var onlyA = document.getElementById('onlyA');
-  var onlyB = document.getElementById('onlyB');
-
-  if (onlyValueA) {
-    new Handsontable(onlyA, {
-      data: onlyValueA,
-      rowHeaders: true,
-      colHeaders: true
-    });
-  } else {
-    onlyA.textContent = "(empty)";
-  }
-
-  if (onlyValueB) {
-    new Handsontable(onlyB, {
-      data: onlyValueB,
-      rowHeaders: true,
-      colHeaders: true
-    });
-  } else {
-    onlyB.textContent = "(empty)";
-  }
-
+  hotA.loadData(resultValueA);
+  hotB.loadData(resultValueB);
 });
 
