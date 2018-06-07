@@ -13,6 +13,10 @@
   "author": "Xavier Ho",
   "license": "MIT",
   "private": true,
+  "scripts": {
+    "start": "parcel index.html --open",
+    "build": "rm -f dist/* && parcel build index.html --public-url './'"
+  },
   "devDependencies": {
     "babel-core": "^6.26.3"
   }
