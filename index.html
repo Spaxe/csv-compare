@@ -2,25 +2,39 @@
 <html>
 <head>
   <title>CSV Compare</title>
+  <link rel="stylesheet" href="node_modules/handsontable/dist/handsontable.full.css" type="text/css">
   <link rel="stylesheet" href="node_modules/basscss/css/basscss.css" type="text/css">
   <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body>
-  <script src="./index.js"></script>
+  <main class="flex flex-column" style="width: 100vw; height: 100vh">
+    <h1 class="block sm-flex">CSV Compare</h1>
+    <div class="flex sm-flex">
+      <div class="col-6">
+        <span>Match header </span><input id="keyA" type="text" title="Primary column" value="email">
+      </div>
+      <div class="col-6">
+        <span>with header </span><input id="keyB" type="text" title="Primary column" value="email">
+      </div>
+    </div>
+    <div class="flex">
 
-  <main>
-    <h1>CSV Compare</h1>
-    <div class="clearfix">
-
-      <div class="col col-6">
+      <div class="col-6">
         <label><input type="file" name="csvA" id="csvA" title="First CSV File to compare with"></label>
       </div>
 
-      <div class="col col-6">
+      <div class="col-6">
         <label><input type="file" name="csvB" id="csvB" title="Second CSV File to compare with"></label>
       </div>
 
     </div>
+    <button id="submit" class="mt2 mb2">Show unique rows</button>
+    <div id="onlyA" class="flex-auto overflow-auto border-bottom">
+    </div>
+    <div id="onlyB" class="flex-auto overflow-auto">
+    </div>
   </main>
+
+  <script src="./index.js"></script>
 </body>
 </html>

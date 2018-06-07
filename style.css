@@ -1,4 +1,14 @@
 body {
   font-family: 'Open Sans', sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
+.sheet {
+  height: 100%;
+}
+
+.table-display {
+  font-size: 75%;
+  height: 100%;
+}

@@ -2,6 +2,8 @@
   "dependencies": {
     "babel-preset-env": "^1.7.0",
     "basscss": "^8.0.4",
+    "handsontable": "^3.0.0",
+    "lodash": "^4.17.10",
     "papaparse": "^4.5.0"
   },
   "name": "csv-compare",
