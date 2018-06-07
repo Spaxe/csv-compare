@@ -1,0 +1,17 @@
+{
+  "dependencies": {
+    "babel-preset-env": "^1.7.0",
+    "basscss": "^8.0.4",
+    "papaparse": "^4.5.0"
+  },
+  "name": "csv-compare",
+  "version": "1.0.0",
+  "description": "Compare between two CSV files in the browser",
+  "main": "index.js",
+  "author": "Xavier Ho",
+  "license": "MIT",
+  "private": true,
+  "devDependencies": {
+    "babel-core": "^6.26.3"
+  }
+}
